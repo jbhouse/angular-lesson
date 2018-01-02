@@ -1,0 +1,11 @@
+<div>
+  <h1>Let's build a purchase request!</h1>
+  <p *ngFor='let k of myPurchaseRequest.attributeArray'>
+    <a href="#">{{k}}</a>
+    <input *ngIf="myPurchaseRequest.attributeTypeHash[k] == 'string'" [(ngModel)] ="myPurchaseRequest[k]" type="text">
+    <input *ngIf="myPurchaseRequest.attributeTypeHash[k] == 'number'" [(ngModel)] ="myPurchaseRequest[k]" type="text">
+    <label *ngIf="myPurchaseRequest.attributeTypeHash[k] == 'boolean'">
+      <input [(ngModel)] ="myPurchaseRequest[k]" type="checkbox" name="true" [checked]='true'>
+    </label>
+  </p>
+</div>

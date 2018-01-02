@@ -1,0 +1,11 @@
+<div>
+  <h1>Let's build a purchase request line item!</h1>
+  <p *ngFor='let k of myPRLI.attributeArray'>
+    <a href="#">{{k}}</a>
+    <input *ngIf="myPRLI.attributeTypeHash[k] == 'string'" [(ngModel)] ="myPRLI[k]" type="text">
+    <input *ngIf="myPRLI.attributeTypeHash[k] == 'number'" [(ngModel)] ="myPRLI[k]" type="text">
+    <label *ngIf="myPRLI.attributeTypeHash[k] == 'boolean'">
+      <input [(ngModel)] ="myPRLI[k]" type="checkbox" name="true" [checked]='true'>
+    </label>
+  </p>
+</div>

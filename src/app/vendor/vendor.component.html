@@ -1,0 +1,11 @@
+<div>
+  <h1>Let's build a vendor!</h1>
+  <p *ngFor='let k of myVendor.attributeArray'>
+    <a href="#">{{k}}</a>
+    <input *ngIf="myVendor.attributeTypeHash[k] == 'string'" [(ngModel)] ="myVendor[k]" type="text">
+    <input *ngIf="myVendor.attributeTypeHash[k] == 'number'" [(ngModel)] ="myVendor[k]" type="text">
+    <label *ngIf="myVendor.attributeTypeHash[k] == 'boolean'">
+      <input [(ngModel)] ="myVendor[k]" type="checkbox" name="true" [checked]='true'>
+    </label>
+  </p>
+</div>

@@ -1,0 +1,25 @@
+<div>
+  <h1>Let's build a user!</h1>
+  <p *ngFor='let k of myUser.attributeArray'>
+    <a href="#">{{k}}</a>
+    <input *ngIf="myUser.attributeTypeHash[k] == 'string'" [(ngModel)] ="myUser[k]" type="text">
+    <input *ngIf="myUser.attributeTypeHash[k] == 'number'" [(ngModel)] ="myUser[k]" type="text">
+    <label *ngIf="myUser.attributeTypeHash[k] == 'boolean'">
+      <input [(ngModel)] ="myUser[k]" type="checkbox" name="true" [checked]='true'>
+    </label>
+  </p>
+  <div>
+    <!-- no functionality here, just display the values of our user for
+    confirmation that things are working correctly -->
+    ID: {{myUser.ID}} <br>
+    First Name: {{myUser.FirstName}} <br>
+    Last Name: {{myUser.LastName}} <br>
+    UserName: {{myUser.UserName}} <br>
+    Email: {{myUser.Email}} <br>
+    Password: {{myUser.Password}} <br>
+    Phone #: {{myUser.Phone}} <br>
+    isReviewer: {{myUser.IsReviewer}} <br>
+    isAdmin: {{myUser.IsAdmin}} <br>
+    isActive: {{myUser.IsActive}} <br>
+  </div>
+</div>
